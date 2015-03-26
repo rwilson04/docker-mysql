@@ -153,6 +153,6 @@ if [ -n "${REPLICATION_SLAVE}" ]; then
 fi
 
 tail -F $LOG &
-#do initial startup to initialize volume (container closes after command exits)
-/etc/init.d/mysql start
-#exec mysqld_safe
+exec mysqld_safe
+#to only do initial startup to initialize volume (container closes after command exits), run the following command instead
+#/etc/init.d/mysql start
